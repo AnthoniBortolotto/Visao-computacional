@@ -1,6 +1,8 @@
 import cv2
 
-valor = 'images/shot00'
+#change the path to the folder where the images are
+base_path = 'C:/Users/Dell/Documents/repos/visao/Visao-computacional/'
+valor = base_path + 'images/shot00'
 
 # valor nulo para comparar para saber se é a primeira imagem
 antigo = None
@@ -13,6 +15,7 @@ for i in range(3, 16):
     # Carregar a imagem
     fator = 0.5
     imagem = cv2.imread(path)
+    print(path)
     gray = cv2.cvtColor(imagem, cv2.COLOR_BGR2GRAY)
     if (antigo is not None):
         diferenca = cv2.absdiff(gray, antigo)
